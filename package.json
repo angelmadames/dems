@@ -1,0 +1,63 @@
+{
+  "name": "dems",
+  "description": "Development Environment Management System",
+  "version": "0.0.0",
+  "author": "Angel M. Adames @angelmadames",
+  "bin": {
+    "dems": "./bin/run"
+  },
+  "bugs": "https://github.com/angelmadames/dems/issues",
+  "dependencies": {
+    "@oclif/command": "^1.8.0",
+    "@oclif/config": "^1.17.0",
+    "@oclif/plugin-help": "^3.2.0",
+    "cli-spinners": "^2.5.0",
+    "install": "^0.13.0",
+    "npm": "^6.14.8",
+    "ora": "^5.1.0",
+    "request": "^2.88.2",
+    "tslib": "^1.14.1"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.23.0",
+    "@types/node": "^10.17.44",
+    "@types/request": "^2.48.5",
+    "eslint": "^5.16.0",
+    "eslint-config-oclif": "^3.1.0",
+    "eslint-config-oclif-typescript": "^0.1.0",
+    "globby": "^10.0.2",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/angelmadames/dems",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "dems",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "angelmadames/dems",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}
